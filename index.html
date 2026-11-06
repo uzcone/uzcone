@@ -599,7 +599,7 @@
     <div class="nav-brand">Tokhirbek</div>
     <ul class="nav-links">
       <li><a href="#home" class="active">홈</a></li>
-      <li><a href="#skills">기술 스택</a></li>
+      <li><a href="#skills">보유 역량</a></li>
       <li><a href="#projects">프로젝트</a></li>
       <li><a href="#certs">자격 및 어학</a></li>
       <li><a href="#contact">연락처</a></li>
@@ -655,10 +655,10 @@
     
     <!-- Skills & Tools -->
     <div class="skills-row" id="skills">
-      <!-- 기술 스택 -->
+      <!-- 보유 역량 (Skills) -->
       <div>
-        <h2 class="section-title">기술 스택</h2>
-        <p class="section-subtitle">현재 학습하고 프로젝트에 적용 중인 기술들입니다.</p>
+        <h2 class="section-title">보유 역량 (Skills)</h2>
+        <p class="section-subtitle">현재 학습하고 프로젝트에 적용 중인 소프트웨어 개발 역량입니다.</p>
         
         <div class="badge-grid">
           <div class="skill-card">
@@ -706,7 +706,7 @@
 
       <!-- 사용 도구 -->
       <div>
-        <h2 class="section-title">사용 도구</h2>
+        <h2 class="section-title">사용 도구 (Tools)</h2>
         <p class="section-subtitle">프로젝트 개발과 협업에 활용한 도구들입니다.</p>
         
         <div class="badge-grid">
@@ -1023,7 +1023,6 @@
             
             <button class="calc-btn" onclick="pressCalc('7')">7</button>
             <button class="calc-btn" onclick="pressCalc('8')">8</button>
-            <button class="calc-btn" onclick="pressCalc('9')">9</button>
             <button class="calc-btn op" onclick="pressCalc('+')">+</button>
             
             <button class="calc-btn" onclick="pressCalc('4')">4</button>
@@ -1123,7 +1122,6 @@
 
   <!-- Scripts -->
   <script>
-    // Modal controls
     function openModal(id) {
       document.getElementById(id).classList.add('active');
     }
@@ -1136,13 +1134,11 @@
       }
     };
 
-    // AI Classification
     function classifyItem(name, conf) {
       document.getElementById('predClass').innerText = name;
       document.getElementById('predConf').innerText = conf + '%';
     }
 
-    // IoT Sensor update
     function updateSensor(val) {
       document.getElementById('distValue').innerText = val + ' cm';
       const led = document.getElementById('ledIndicator');
@@ -1162,7 +1158,6 @@
       }
     }
 
-    // Calculator Demo
     let expr = '';
     function pressCalc(btn) {
       const display = document.getElementById('calcDisplay');
