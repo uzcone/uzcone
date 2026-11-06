@@ -264,7 +264,7 @@
 
     @media (min-width: 768px) {
       .project-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -300,7 +300,6 @@
     .project-banner.ai { background: linear-gradient(135deg, #334155 0%, #1e293b 100%); }
     .project-banner.hardware { background: linear-gradient(135deg, #0d9488 0%, #115e59 100%); }
     .project-banner.java { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
-    .project-banner.auto { background: linear-gradient(135deg, #475569 0%, #1e293b 100%); }
 
     .project-body {
       padding: 1.4rem;
@@ -362,7 +361,7 @@
       text-decoration: underline;
     }
 
-    /* Certificates Section */
+    /* Certificates & Language Section */
     .cert-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -371,7 +370,7 @@
 
     @media (min-width: 768px) {
       .cert-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -387,6 +386,10 @@
       transition: all 0.2s;
     }
 
+    .cert-card.topik {
+      border-left-color: #ef4444;
+    }
+
     .cert-card:hover {
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
       transform: translateY(-2px);
@@ -400,6 +403,10 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
+    }
+
+    .cert-card.topik .cert-org {
+      color: #ef4444;
     }
 
     .cert-title {
@@ -594,7 +601,7 @@
       <li><a href="#home" class="active">홈</a></li>
       <li><a href="#skills">기술 스택</a></li>
       <li><a href="#projects">프로젝트</a></li>
-      <li><a href="#certs">자격 및 수료증</a></li>
+      <li><a href="#certs">자격 및 어학</a></li>
       <li><a href="#contact">연락처</a></li>
     </ul>
   </nav>
@@ -610,12 +617,16 @@
         <h1 class="hero-name">토히르벡 입니다.</h1>
         <p class="hero-bio">
           저는 한국성서대학교 컴퓨터소프트웨어학과에 재학 중인 3학년 학생입니다. 
-          새로운 IT 기술과 리눅스 시스템 환경을 능동적으로 학습하며, 문제를 논리적으로 분석하고 해결하는 개발자로 성장하고 있습니다.
+          새로운 IT 기술과 Linux 환경을 학습하며 능동적으로 문제를 분석·해결하고, 한국어(TOPIK 4급) 기반의 원활한 커뮤니케이션 능력을 갖춘 예비 개발자입니다.
         </p>
         <div class="hero-meta">
           <div class="meta-item">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>한국성서대학교 컴퓨터소프트웨어학과 (3학년)</span>
+          </div>
+          <div class="meta-item">
+            <i class="fa-solid fa-language"></i>
+            <span>한국어 능력: TOPIK 4급 (162점)</span>
           </div>
           <div class="meta-item">
             <i class="fa-solid fa-location-dot"></i>
@@ -812,35 +823,36 @@
           </div>
         </div>
 
-        <!-- 5. Automotive Tech (In-page Demo) -->
-        <div class="project-card">
-          <div class="project-banner auto">🚗 Automotive Tech</div>
-          <div class="project-body">
-            <h3 class="project-title">자동차 공학 전공 (전문학사)</h3>
-            <p class="project-desc">
-              서정대학교 자동차과에서 엔진 구조, 전자제어 시스템, ECU 진단 실무를 배우며 하드웨어와 제어 공학의 탄탄한 기본기를 확립했습니다.
-            </p>
-            <div class="tags">
-              <span class="tag">서정대학교</span>
-              <span class="tag">전자제어</span>
-              <span class="tag">전문학사</span>
+      </div>
+    </div>
+
+    <!-- Certificates & Language Section -->
+    <div id="certs">
+      <h2 class="section-title">자격 및 어학 성적</h2>
+      <p class="section-subtitle">공인 기관을 통해 이수하고 검증받은 기술 자격 및 언어 소통 역량입니다.</p>
+
+      <div class="cert-grid">
+        
+        <!-- Language 1: TOPIK II (Level 4) -->
+        <div class="cert-card topik">
+          <div>
+            <div class="cert-org">
+              <i class="fa-solid fa-language"></i> 국립국제교육원 (NIIED)
             </div>
-            <button class="project-btn" onclick="openModal('autoModal')">
-              <i class="fa-solid fa-book-open"></i> 학력 및 전공 상세 보기
+            <h3 class="cert-title">TOPIK II (한국어능력시험 4급)</h3>
+            <p class="cert-info">
+              총점 162점(읽기 86점, 듣기 66점)을 획득하여 일반적인 사회적 주제 및 업무 환경에서 능숙한 한국어 커뮤니케이션 능력을 보유하고 있음을 공인받았습니다.
+            </p>
+          </div>
+          <div class="cert-meta">
+            <span>취득회차: 제92회 (2024.01.21)</span>
+            <button class="project-btn" style="color: #ef4444;" onclick="openModal('topikModal')">
+              <i class="fa-solid fa-file-lines"></i> 성적표 상세 확인
             </button>
           </div>
         </div>
 
-      </div>
-    </div>
-
-    <!-- Certificates Section -->
-    <div id="certs">
-      <h2 class="section-title">자격 및 수료증</h2>
-      <p class="section-subtitle">공인 기관을 통해 이수하고 검증받은 기술 자격 내역입니다.</p>
-
-      <div class="cert-grid">
-        <!-- Certificate 1: Linux Essentials -->
+        <!-- Certificate 2: Linux Essentials -->
         <div class="cert-card">
           <div>
             <div class="cert-org">
@@ -859,7 +871,7 @@
           </div>
         </div>
 
-        <!-- Certificate 2: Linux Unhatched -->
+        <!-- Certificate 3: Linux Unhatched -->
         <div class="cert-card">
           <div>
             <div class="cert-org">
@@ -877,6 +889,7 @@
             </button>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -884,7 +897,38 @@
 
   <!-- Modals -->
 
-  <!-- 1. AI Modal -->
+  <!-- TOPIK Modal -->
+  <div id="topikModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🇰🇷 한국어능력시험 성적증명서 (TOPIK II)</h3>
+        <button class="modal-close" onclick="closeModal('topikModal')">&times;</button>
+      </div>
+      <div class="modal-content">
+        <div class="interactive-box" style="border-left: 4px solid #ef4444;">
+          <p style="font-size: 0.95rem; font-weight: 700; color: #ef4444; margin-bottom: 0.5rem;">공식 TOPIK II 시험 결과 (Official Score Report)</p>
+          <div style="font-size: 0.9rem; color: #334155; line-height: 1.8;">
+            <div>• <b>성명(Name):</b> YULDASHEV TOKHIRBEK TOLIBJON UGLI</div>
+            <div>• <b>취득 등급(Level):</b> <b style="color: #ef4444; font-size: 1.05rem;">4급 (Level 4)</b></div>
+            <div>• <b>총점(Total Score):</b> <b style="color: #0f172a;">162 / 300</b></div>
+            <div>• <b>영역별 점수:</b> 듣기 66 / 쓰기 10 / 읽기 86</div>
+            <div>• <b>수험번호:</b> 001588000155 (제92회 / 2024.01.21)</div>
+            <div>• <b>문서확인번호:</b> 7462-8992-0716-3291</div>
+          </div>
+        </div>
+        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+          <b>📌 언어 수행 역량:</b>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">
+            <li><b>읽기(86점):</b> 기술 문서, IT 기사, 설계 가이드라인 등 전문 정보를 스스로 읽고 정확히 이해하는 독해력 보유</li>
+            <li><b>듣기(66점):</b> 팀 미팅, 기술 회의 및 한국어 업무 환경에서 원활한 의사소통 및 맥락 파악 가능</li>
+            <li><b>실무 협업:</b> 한국 대학(한국성서대학교) 3학년 재학 및 팀 프로젝트(TohirMap) 완수를 통해 한국어 협업 역량 입증</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Modal -->
   <div id="aiModal" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
@@ -924,7 +968,7 @@
     </div>
   </div>
 
-  <!-- 2. IoT Modal -->
+  <!-- IoT Modal -->
   <div id="iotModal" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
@@ -957,7 +1001,7 @@
     </div>
   </div>
 
-  <!-- 3. Java Modal -->
+  <!-- Java Modal -->
   <div id="javaModal" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
@@ -1005,35 +1049,7 @@
     </div>
   </div>
 
-  <!-- 4. Automotive Modal -->
-  <div id="autoModal" class="modal-overlay">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3>🚗 학력 및 전공 상세 (서정대학교 자동차과)</h3>
-        <button class="modal-close" onclick="closeModal('autoModal')">&times;</button>
-      </div>
-      <div class="modal-content">
-        <h4 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 0.4rem;">서정대학교 자동차과 (전문학사 졸업)</h4>
-        <p style="color: #64748b; font-size: 0.92rem; margin-bottom: 1rem;">자동차 구조와 전자제어 장치에 대한 공학적 이해</p>
-
-        <div class="interactive-box">
-          <b>🔧 주요 이수 및 실습 역량:</b>
-          <ul style="margin-left: 1.2rem; margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.7;">
-            <li><b>자동차 섀시 및 엔진 메커니즘:</b> 동력 전달 장치, 브레이크 및 조향 시스템의 기계적 원리 이해</li>
-            <li><b>자동차 전자제어:</b> ECU 통신 프로토콜, 전자제어 센서 및 액추에이터 점검 실무</li>
-            <li><b>차량 고장 진단:</b> OBD-II 스캐너를 활용한 센서 데이터 분석 및 DTC 오류 코드 진단</li>
-          </ul>
-        </div>
-
-        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
-          <b>💡 컴퓨터소프트웨어학과로의 연계:</b><br>
-          기계 및 전자제어 시스템을 다루며 축적된 하드웨어 이해력은 현재 컴퓨터소프트웨어학과에서 임베디드, AIoT 및 소프트웨어 구조를 보다 빠르고 직관적으로 습득하는 튼튼한 밑거름이 되고 있습니다.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. Cert Modal 1 (Linux Essentials) -->
+  <!-- Cert Modal 1 (Linux Essentials) -->
   <div id="certModal1" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
@@ -1062,7 +1078,7 @@
     </div>
   </div>
 
-  <!-- 6. Cert Modal 2 (Linux Unhatched) -->
+  <!-- Cert Modal 2 (Linux Unhatched) -->
   <div id="certModal2" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
