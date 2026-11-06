@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --dark-bg: #0f172a;
-      --header-bg: #1e293b;
+      --dark-bg: #0b1120;
+      --hero-bg: #0f172a;
       --white: #ffffff;
-      --light-bg: #f8fafc;
       --text-main: #334155;
       --text-muted: #64748b;
       --primary: #38bdf8;
@@ -37,10 +36,10 @@
       color: inherit;
     }
 
-    /* Top Navigation */
+    /* Navbar */
     .navbar {
-      background-color: #0b1120;
-      padding: 1.2rem 2rem;
+      background-color: var(--dark-bg);
+      padding: 1.1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -52,7 +51,7 @@
 
     .nav-brand {
       color: var(--white);
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.5px;
     }
@@ -68,8 +67,6 @@
       font-size: 0.95rem;
       font-weight: 500;
       transition: color 0.2s;
-      position: relative;
-      padding-bottom: 4px;
     }
 
     .nav-links a:hover,
@@ -77,17 +74,7 @@
       color: var(--white);
     }
 
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--primary);
-    }
-
-    /* Hero / Header Section */
+    /* Hero Section */
     .hero {
       background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%);
       color: var(--white);
@@ -104,7 +91,6 @@
     }
 
     .profile-img-wrapper {
-      position: relative;
       flex-shrink: 0;
     }
 
@@ -113,7 +99,7 @@
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #38bdf8;
+      border: 4px solid var(--primary);
       background-color: #334155;
       box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
@@ -123,33 +109,33 @@
     }
 
     .hero-greeting {
-      color: #38bdf8;
+      color: var(--primary);
       font-size: 1.15rem;
       font-weight: 600;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     .hero-name {
-      font-size: 2.4rem;
+      font-size: 2.3rem;
       font-weight: 800;
       letter-spacing: -1px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .hero-bio {
       color: #cbd5e1;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       line-height: 1.7;
       max-width: 600px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
       word-break: keep-all;
     }
 
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.95rem;
+      gap: 1.4rem;
+      font-size: 0.92rem;
       color: #94a3b8;
     }
 
@@ -160,10 +146,9 @@
     }
 
     .meta-item i {
-      color: #38bdf8;
+      color: var(--primary);
     }
 
-    /* Floating handwritten note */
     .hero-motto {
       position: absolute;
       right: 0;
@@ -173,8 +158,7 @@
       font-style: italic;
       line-height: 1.4;
       text-align: right;
-      transform: rotate(4deg);
-      border-left: 2px solid #38bdf8;
+      border-left: 2px solid var(--primary);
       padding-left: 12px;
       display: none;
     }
@@ -185,22 +169,21 @@
       }
     }
 
-    /* Main Container */
+    /* Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 4rem 2rem;
     }
 
-    /* Section Titles */
     .section-title {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: #0f172a;
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     .section-title::before {
@@ -208,13 +191,13 @@
       display: inline-block;
       width: 4px;
       height: 1.3rem;
-      background-color: #0284c7;
+      background-color: var(--primary-dark);
       border-radius: 2px;
     }
 
     .section-subtitle {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       margin-bottom: 2rem;
     }
 
@@ -223,7 +206,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 2.5rem;
-      margin-bottom: 4.5rem;
+      margin-bottom: 4rem;
     }
 
     @media (min-width: 768px) {
@@ -255,7 +238,7 @@
 
     .skill-icon {
       font-size: 2rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       display: block;
     }
 
@@ -268,14 +251,15 @@
 
     .skill-level {
       font-size: 0.75rem;
-      color: #64748b;
+      color: var(--text-muted);
     }
 
-    /* Project Cards */
+    /* Projects Grid */
     .project-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
+      margin-bottom: 4rem;
     }
 
     @media (min-width: 768px) {
@@ -300,33 +284,23 @@
       border-color: #cbd5e1;
     }
 
-    .project-header-banner {
-      height: 130px;
+    .project-banner {
+      height: 125px;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      position: relative;
-    }
-
-    .project-header-banner.tohirmap {
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-    }
-
-    .project-header-banner.ai {
-      background: linear-gradient(135deg, #475569 0%, #1e293b 100%);
-    }
-
-    .project-header-banner.hardware {
-      background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
-    }
-
-    .project-banner-title {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
+
+    .project-banner.tohirmap { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+    .project-banner.ai { background: linear-gradient(135deg, #334155 0%, #1e293b 100%); }
+    .project-banner.hardware { background: linear-gradient(135deg, #0d9488 0%, #115e59 100%); }
+    .project-banner.java { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
+    .project-banner.auto { background: linear-gradient(135deg, #475569 0%, #1e293b 100%); }
 
     .project-body {
       padding: 1.4rem;
@@ -344,8 +318,8 @@
     }
 
     .project-desc {
-      font-size: 0.9rem;
-      color: #64748b;
+      font-size: 0.88rem;
+      color: var(--text-muted);
       margin-bottom: 1.2rem;
       line-height: 1.5;
       flex: 1;
@@ -364,29 +338,207 @@
       color: #475569;
       font-size: 0.75rem;
       font-weight: 600;
-      padding: 0.25rem 0.6rem;
+      padding: 0.25rem 0.55rem;
       border-radius: 6px;
     }
 
-    .project-link {
+    .project-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #0284c7;
+      color: var(--primary-dark);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
       margin-top: auto;
-      transition: color 0.2s;
+      text-align: left;
     }
 
-    .project-link:hover {
+    .project-btn:hover {
       color: #0369a1;
       text-decoration: underline;
     }
 
+    /* Certificates Section */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .cert-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .cert-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 5px solid #0284c7;
+      border-radius: 12px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+
+    .cert-card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .cert-org {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .cert-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+
+    .cert-info {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .cert-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      border-top: 1px dashed var(--border);
+      padding-top: 0.8rem;
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--white);
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      border-radius: 16px;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-header {
+      padding: 1.3rem 1.6rem;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .modal-header h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: #64748b;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      padding: 1.6rem;
+    }
+
+    .interactive-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+    }
+
+    .sensor-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0284c7;
+    }
+
+    .calc-screen {
+      background: #0f172a;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 1.4rem;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      text-align: right;
+      margin-bottom: 0.8rem;
+    }
+
+    .calc-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+
+    .calc-btn {
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .calc-btn.op { background: #e0f2fe; color: #0284c7; }
+    .calc-btn.eq { background: #0284c7; color: #ffffff; }
+
     /* Footer */
     .footer {
-      background-color: #0b1120;
+      background-color: var(--dark-bg);
       color: #94a3b8;
       padding: 2.5rem 2rem;
       border-top: 1px solid #1e293b;
@@ -411,15 +563,10 @@
     }
 
     .footer-brand {
-      color: #ffffff;
+      color: var(--white);
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 0.3rem;
-    }
-
-    .footer-desc {
-      font-size: 0.85rem;
-      color: #64748b;
     }
 
     .footer-socials {
@@ -434,20 +581,20 @@
     }
 
     .footer-socials a:hover {
-      color: #ffffff;
+      color: var(--white);
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-brand">Tokhirbek</div>
     <ul class="nav-links">
       <li><a href="#home" class="active">홈</a></li>
-      <li><a href="#about">소개</a></li>
       <li><a href="#skills">기술 스택</a></li>
       <li><a href="#projects">프로젝트</a></li>
+      <li><a href="#certs">자격 및 수료증</a></li>
       <li><a href="#contact">연락처</a></li>
     </ul>
   </nav>
@@ -463,7 +610,7 @@
         <h1 class="hero-name">토히르벡 입니다.</h1>
         <p class="hero-bio">
           저는 한국성서대학교 컴퓨터소프트웨어학과에 재학 중인 3학년 학생입니다. 
-          IT 및 소프트웨어 개발 분야에 큰 열정을 가지고 있으며, 새로운 기술을 학습하고 꾸준히 성장해 나가는 주니어 개발자입니다.
+          새로운 IT 기술과 리눅스 시스템 환경을 능동적으로 학습하며, 문제를 논리적으로 분석하고 해결하는 개발자로 성장하고 있습니다.
         </p>
         <div class="hero-meta">
           <div class="meta-item">
@@ -472,7 +619,7 @@
           </div>
           <div class="meta-item">
             <i class="fa-solid fa-location-dot"></i>
-            <span>대한민국</span>
+            <span>대한민국 (서울 / 의정부)</span>
           </div>
           <div class="meta-item">
             <i class="fa-solid fa-envelope"></i>
@@ -492,17 +639,22 @@
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main class="container" id="skills">
+  <!-- Main Container -->
+  <main class="container">
     
     <!-- Skills & Tools -->
-    <div class="skills-row">
+    <div class="skills-row" id="skills">
       <!-- 기술 스택 -->
       <div>
         <h2 class="section-title">기술 스택</h2>
         <p class="section-subtitle">현재 학습하고 프로젝트에 적용 중인 기술들입니다.</p>
         
         <div class="badge-grid">
+          <div class="skill-card">
+            <i class="fa-brands fa-linux skill-icon" style="color: #f59e0b;"></i>
+            <div class="skill-name">Linux</div>
+            <div class="skill-level">(기초)</div>
+          </div>
           <div class="skill-card">
             <i class="fa-brands fa-java skill-icon" style="color: #e76f00;"></i>
             <div class="skill-name">Java</div>
@@ -535,12 +687,7 @@
           </div>
           <div class="skill-card">
             <i class="fa-solid fa-microchip skill-icon" style="color: #00979d;"></i>
-            <div class="skill-name">Arduino</div>
-            <div class="skill-level">(기초)</div>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-network-wired skill-icon" style="color: #0284c7;"></i>
-            <div class="skill-name">AIoT</div>
+            <div class="skill-name">Arduino / AIoT</div>
             <div class="skill-level">(기초)</div>
           </div>
         </div>
@@ -583,19 +730,17 @@
     <!-- Projects Section -->
     <div id="projects">
       <h2 class="section-title">프로젝트</h2>
-      <p class="section-subtitle">직접 기획하고 참여한 주요 개발 및 실습 프로젝트입니다.</p>
+      <p class="section-subtitle">직접 설계하고 구현한 주요 실습 및 팀 프로젝트입니다.</p>
 
       <div class="project-grid">
         
-        <!-- 1. TohirMap -->
+        <!-- 1. TohirMap (Direct Live Link) -->
         <div class="project-card">
-          <div class="project-header-banner tohirmap">
-            <div class="project-banner-title">🇺🇿 TohirMap</div>
-          </div>
+          <div class="project-banner tohirmap">🇺🇿 TohirMap</div>
           <div class="project-body">
             <h3 class="project-title">TohirMap - 우즈베키스탄 소개 웹</h3>
             <p class="project-desc">
-              React 19와 Leaflet 지도를 결합한 3인 팀 프로젝트입니다. 우즈베키스탄의 대표 관광지, 전통 음식, 문화 데이터를 인터랙티브 지도로 제공합니다.
+              React 19와 Leaflet 지도를 결합한 3인 팀 프로젝트입니다. 우즈베키스탄의 여행지, 음식, 문화 콘텐츠를 인터랙티브 지도로 제공합니다.
             </p>
             <div class="tags">
               <span class="tag">React 19</span>
@@ -603,128 +748,354 @@
               <span class="tag">Vite</span>
               <span class="tag">GitHub Actions</span>
             </div>
-            <a href="https://hangi7890.github.io/TohirMap/" target="_blank" class="project-link">
+            <a href="https://hangi7890.github.io/TohirMap/" target="_blank" class="project-btn">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> 사이트 바로가기
             </a>
           </div>
         </div>
 
-        <!-- 2. AI Fashion-MNIST -->
+        <!-- 2. AI Fashion-MNIST (In-page Demo) -->
         <div class="project-card">
-          <div class="project-header-banner ai">
-            <div class="project-banner-title">🧠 Deep Learning</div>
-          </div>
+          <div class="project-banner ai">🧠 Deep Learning</div>
           <div class="project-body">
             <h3 class="project-title">AI 이미지 분류 실습 (Fashion-MNIST)</h3>
             <p class="project-desc">
-              Python과 CNN 딥러닝 모델을 활용하여 Fashion-MNIST 패션 아이템 이미지를 전처리하고 분류하는 실습을 진행했습니다.
+              Python과 CNN 딥러닝 모델을 활용하여 패션 아이템 10종을 전처리하고 학습 및 분류하는 모델 실습을 수행했습니다.
             </p>
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">TensorFlow</span>
-              <span class="tag">Google Colab</span>
+              <span class="tag">CNN</span>
+              <span class="tag">Colab</span>
             </div>
-            <a href="https://github.com/uzcone" target="_blank" class="project-link">
-              <i class="fa-brands fa-github"></i> 깃허브 저장소 보기
-            </a>
+            <button class="project-btn" onclick="openModal('aiModal')">
+              <i class="fa-solid fa-play"></i> 프로젝트 실행 및 상세 보기
+            </button>
           </div>
         </div>
 
-        <!-- 3. Arduino & AIoT -->
+        <!-- 3. Arduino & AIoT (In-page Demo) -->
         <div class="project-card">
-          <div class="project-header-banner hardware">
-            <div class="project-banner-title">⚡ Arduino & AIoT</div>
-          </div>
+          <div class="project-banner hardware">⚡ Arduino & AIoT</div>
           <div class="project-body">
-            <h3 class="project-title">Arduino & AIoT 하드웨어 실습</h3>
+            <h3 class="project-title">Arduino & AIoT 센서 제어 실습</h3>
             <p class="project-desc">
-              초음파 센서, LED, 부저 등 아두이노 모듈을 제어하고 센서 데이터를 수집하여 동작시키는 임베디드 및 AIoT 기초 프로젝트를 수행했습니다.
+              초음파 센서(HC-SR04), 3색 LED, 피에조 부저를 회로로 구성하여 거리에 따라 경고 알림을 제어하는 임베디드 프로젝트입니다.
             </p>
             <div class="tags">
               <span class="tag">Arduino</span>
               <span class="tag">C/C++</span>
-              <span class="tag">Sensor I/O</span>
+              <span class="tag">Sensor Control</span>
             </div>
-            <a href="https://github.com/uzcone" target="_blank" class="project-link">
-              <i class="fa-brands fa-github"></i> 실습 자료 확인
-            </a>
+            <button class="project-btn" onclick="openModal('iotModal')">
+              <i class="fa-solid fa-sliders"></i> 센서 시뮬레이터 실행하기
+            </button>
           </div>
         </div>
 
-        <!-- 4. Java Application -->
+        <!-- 4. Java Project (In-page Demo) -->
         <div class="project-card">
-          <div class="project-header-banner">
-            <div class="project-banner-title">☕ Java Project</div>
-          </div>
+          <div class="project-banner java">☕ Java Project</div>
           <div class="project-body">
-            <h3 class="project-title">Java 콘솔/GUI 프로그램 실습</h3>
+            <h3 class="project-title">Java 객체지향 계산기 프로그램</h3>
             <p class="project-desc">
-              Java의 객체지향 프로그래밍(OOP) 핵심 개념을 적용하여 계산기 및 기초 비즈니스 로직을 구현하는 실습을 진행했습니다.
+              Java의 OOP(캡슐화, 연산자 추상화) 원리를 적용하여 연산 로직과 예외 처리를 체계적으로 구현한 프로젝트입니다.
             </p>
             <div class="tags">
               <span class="tag">Java</span>
-              <span class="tag">OOP</span>
-              <span class="tag">Console</span>
+              <span class="tag">OOP Design</span>
+              <span class="tag">Algorithm</span>
             </div>
-            <a href="https://github.com/uzcone" target="_blank" class="project-link">
-              <i class="fa-brands fa-github"></i> 소스코드 확인
-            </a>
+            <button class="project-btn" onclick="openModal('javaModal')">
+              <i class="fa-solid fa-calculator"></i> 계산기 프로그램 실행
+            </button>
           </div>
         </div>
 
-        <!-- 5. 학업 & 일정 관리 시스템 -->
+        <!-- 5. Automotive Tech (In-page Demo) -->
         <div class="project-card">
-          <div class="project-header-banner" style="background: linear-gradient(135deg, #334155 0%, #1e293b 100%);">
-            <div class="project-banner-title">📅 Academic Manager</div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">대학생 학업 & 스펙 관리 매니저</h3>
-            <p class="project-desc">
-              학생들이 자신의 학사 일정, 강의 과제 및 대외활동 스펙을 편리하게 등록하고 관리할 수 있도록 설계된 웹 프로젝트입니다.
-            </p>
-            <div class="tags">
-              <span class="tag">JavaScript</span>
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-            </div>
-            <a href="https://github.com/uzcone" target="_blank" class="project-link">
-              <i class="fa-brands fa-github"></i> 프로젝트 상세 보기
-            </a>
-          </div>
-        </div>
-
-        <!-- 6. 이전 학력 (자동차 전공) -->
-        <div class="project-card">
-          <div class="project-header-banner" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
-            <div class="project-banner-title">🚗 Automotive Tech</div>
-          </div>
+          <div class="project-banner auto">🚗 Automotive Tech</div>
           <div class="project-body">
             <h3 class="project-title">자동차 공학 전공 (전문학사)</h3>
             <p class="project-desc">
-              서정대학교 자동차과 전문학사 과정을 이수하며 기계 및 자동차 제어에 대한 공학적 기초 지식과 실무 역량을 다졌습니다.
+              서정대학교 자동차과에서 엔진 구조, 전자제어 시스템, ECU 진단 실무를 배우며 하드웨어와 제어 공학의 탄탄한 기본기를 확립했습니다.
             </p>
             <div class="tags">
-              <span class="tag">자동차공학</span>
-              <span class="tag">기계제어</span>
+              <span class="tag">서정대학교</span>
+              <span class="tag">전자제어</span>
               <span class="tag">전문학사</span>
             </div>
-            <a href="#contact" class="project-link">
-              <i class="fa-solid fa-circle-info"></i> 학력 세부 확인
-            </a>
+            <button class="project-btn" onclick="openModal('autoModal')">
+              <i class="fa-solid fa-book-open"></i> 학력 및 전공 상세 보기
+            </button>
           </div>
         </div>
 
       </div>
     </div>
 
+    <!-- Certificates Section -->
+    <div id="certs">
+      <h2 class="section-title">자격 및 수료증</h2>
+      <p class="section-subtitle">공인 기관을 통해 이수하고 검증받은 기술 자격 내역입니다.</p>
+
+      <div class="cert-grid">
+        <!-- Certificate 1: Linux Essentials -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-org">
+              <i class="fa-solid fa-award"></i> Cisco Networking Academy & NDG
+            </div>
+            <h3 class="cert-title">Linux Essentials</h3>
+            <p class="cert-info">
+              리눅스 운영체제의 아키텍처, 커맨드라인 인터페이스(CLI), 파일 시스템 권한, 프로세스 제어 및 쉘 스크립팅 기본기를 검증하는 공식 교육 과정을 수료했습니다.
+            </p>
+          </div>
+          <div class="cert-meta">
+            <span>수료일: 2026.11.06</span>
+            <button class="project-btn" onclick="openModal('certModal1')">
+              <i class="fa-solid fa-certificate"></i> 수료증 세부정보
+            </button>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Linux Unhatched -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-org">
+              <i class="fa-solid fa-award"></i> Cisco Networking Academy & NDG
+            </div>
+            <h3 class="cert-title">Linux Unhatched</h3>
+            <p class="cert-info">
+              리눅스 기본 쉘 명령어 탐색, 디렉터리 구조 이해 및 시스템 관리의 기초적인 지식을 단계별 실습을 통해 이수하였습니다.
+            </p>
+          </div>
+          <div class="cert-meta">
+            <span>수료일: 2026.11.05</span>
+            <button class="project-btn" onclick="openModal('certModal2')">
+              <i class="fa-solid fa-certificate"></i> 수료증 세부정보
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
+
+  <!-- Modals -->
+
+  <!-- 1. AI Modal -->
+  <div id="aiModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🧠 Fashion-MNIST CNN 분류기 데모</h3>
+        <button class="modal-close" onclick="closeModal('aiModal')">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p style="color: #64748b; font-size: 0.95rem;">
+          Python 및 TensorFlow 기반으로 훈련된 합성곱 신경망(CNN) 모델을 시뮬레이션합니다. 아래 아이템을 선택하면 모델이 이미지 특징을 추출하여 분류 결과를 도출합니다.
+        </p>
+
+        <div class="interactive-box">
+          <label style="font-weight: 700; display: block; margin-bottom: 0.5rem;">분류할 아이템 선택:</label>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+            <button class="tag" style="cursor: pointer;" onclick="classifyItem('T-shirt / Top', 98.4)">티셔츠 (T-shirt)</button>
+            <button class="tag" style="cursor: pointer;" onclick="classifyItem('Sneaker', 99.1)">스니커즈 (Sneaker)</button>
+            <button class="tag" style="cursor: pointer;" onclick="classifyItem('Ankle Boot', 97.2)">부츠 (Boot)</button>
+            <button class="tag" style="cursor: pointer;" onclick="classifyItem('Dress', 96.5)">원피스 (Dress)</button>
+          </div>
+
+          <div style="background: #ffffff; padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+            <div>예측 클래스: <b id="predClass" style="color: #0284c7;">T-shirt / Top</b></div>
+            <div>예측 확률(Confidence): <b id="predConf" style="color: #10b981;">98.4%</b></div>
+            <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #64748b;">* 구조: Conv2D(32) → MaxPool → Conv2D(64) → Dense(128) → Softmax(10)</div>
+          </div>
+        </div>
+
+        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+          <b>📌 핵심 학습 내용:</b>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">
+            <li>28x28 흑백 이미지 정규화 (0~255 → 0.0~1.0)</li>
+            <li>Dropout(0.25) 적용을 통한 과적합(Overfitting) 방지</li>
+            <li>테스트 데이터셋 기준 검증 정확도 91.8% 달성</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. IoT Modal -->
+  <div id="iotModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>⚡ Arduino 거리 센서 경보 시뮬레이터</h3>
+        <button class="modal-close" onclick="closeModal('iotModal')">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p style="color: #64748b; font-size: 0.95rem;">
+          HC-SR04 초음파 센서와 연동된 LED/부저 제어 로직을 실시간으로 테스트할 수 있습니다.
+        </p>
+
+        <div class="interactive-box" style="text-align: center;">
+          <label style="font-weight: 700;">물체와의 거리 조절 (cm):</label>
+          <input type="range" id="distRange" min="5" max="100" value="50" style="width: 100%; margin: 1rem 0;" oninput="updateSensor(this.value)">
+          
+          <div class="sensor-val" id="distValue">50 cm</div>
+          <div id="ledIndicator" style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: #eab308; margin-top: 0.5rem;"></div>
+          <div id="statusText" style="font-weight: 700; color: #eab308; margin-top: 0.3rem;">주의 (Warning Zone)</div>
+        </div>
+
+        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+          <b>📌 하드웨어 제어 원리:</b>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">
+            <li>Trig 핀에 10us 펄스 신호 출력 후 Echo 핀의 High 유지 시간 계산</li>
+            <li>거리 = (Echo 시간 * 340m/s) / 2</li>
+            <li>20cm 미만: RED LED 점등 + 부저 연속 경보음 발생</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Java Modal -->
+  <div id="javaModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>☕ Java OOP 연산기 데모</h3>
+        <button class="modal-close" onclick="closeModal('javaModal')">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p style="color: #64748b; font-size: 0.95rem;">
+          Java Swing GUI 구조와 연산자 캡슐화 로직을 웹 인터페이스로 재현한 실습기입니다.
+        </p>
+
+        <div class="interactive-box">
+          <div class="calc-screen" id="calcDisplay">0</div>
+          <div class="calc-buttons">
+            <button class="calc-btn" onclick="pressCalc('C')">C</button>
+            <button class="calc-btn op" onclick="pressCalc('/')">/</button>
+            <button class="calc-btn op" onclick="pressCalc('*')">*</button>
+            <button class="calc-btn op" onclick="pressCalc('-')">-</button>
+            
+            <button class="calc-btn" onclick="pressCalc('7')">7</button>
+            <button class="calc-btn" onclick="pressCalc('8')">8</button>
+            <button class="calc-btn" onclick="pressCalc('9')">9</button>
+            <button class="calc-btn op" onclick="pressCalc('+')">+</button>
+            
+            <button class="calc-btn" onclick="pressCalc('4')">4</button>
+            <button class="calc-btn" onclick="pressCalc('5')">5</button>
+            <button class="calc-btn" onclick="pressCalc('6')">6</button>
+            <button class="calc-btn eq" onclick="pressCalc('=')">=</button>
+            
+            <button class="calc-btn" onclick="pressCalc('1')">1</button>
+            <button class="calc-btn" onclick="pressCalc('2')">2</button>
+            <button class="calc-btn" onclick="pressCalc('3')">3</button>
+            <button class="calc-btn" onclick="pressCalc('0')">0</button>
+          </div>
+        </div>
+
+        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+          <b>📌 객체지향 설계 핵심:</b>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">
+            <li><code>Operation</code> 인터페이스 설계를 통한 다형성(Polymorphism) 구현</li>
+            <li>0으로 나누기 연산 시 <code>ArithmeticException</code> 방어 예외 처리</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Automotive Modal -->
+  <div id="autoModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🚗 학력 및 전공 상세 (서정대학교 자동차과)</h3>
+        <button class="modal-close" onclick="closeModal('autoModal')">&times;</button>
+      </div>
+      <div class="modal-content">
+        <h4 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 0.4rem;">서정대학교 자동차과 (전문학사 졸업)</h4>
+        <p style="color: #64748b; font-size: 0.92rem; margin-bottom: 1rem;">자동차 구조와 전자제어 장치에 대한 공학적 이해</p>
+
+        <div class="interactive-box">
+          <b>🔧 주요 이수 및 실습 역량:</b>
+          <ul style="margin-left: 1.2rem; margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.7;">
+            <li><b>자동차 섀시 및 엔진 메커니즘:</b> 동력 전달 장치, 브레이크 및 조향 시스템의 기계적 원리 이해</li>
+            <li><b>자동차 전자제어:</b> ECU 통신 프로토콜, 전자제어 센서 및 액추에이터 점검 실무</li>
+            <li><b>차량 고장 진단:</b> OBD-II 스캐너를 활용한 센서 데이터 분석 및 DTC 오류 코드 진단</li>
+          </ul>
+        </div>
+
+        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+          <b>💡 컴퓨터소프트웨어학과로의 연계:</b><br>
+          기계 및 전자제어 시스템을 다루며 축적된 하드웨어 이해력은 현재 컴퓨터소프트웨어학과에서 임베디드, AIoT 및 소프트웨어 구조를 보다 빠르고 직관적으로 습득하는 튼튼한 밑거름이 되고 있습니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Cert Modal 1 (Linux Essentials) -->
+  <div id="certModal1" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📜 Cisco & NDG: Linux Essentials</h3>
+        <button class="modal-close" onclick="closeModal('certModal1')">&times;</button>
+      </div>
+      <div class="modal-content">
+        <div class="interactive-box">
+          <p style="font-size: 0.95rem; font-weight: 700; color: #0284c7; margin-bottom: 0.5rem;">Cisco Networking Academy & NDG 공식 수료증</p>
+          <div style="font-size: 0.9rem; color: #334155; line-height: 1.8;">
+            <div>• <b>수료자(Awarded to):</b> TOKHIRBEK YULDASHEV</div>
+            <div>• <b>과정명:</b> Linux Essentials</div>
+            <div>• <b>수료일자(Completion Date):</b> 06 Nov 2026</div>
+            <div>• <b>Cert ID:</b> <code>7ef01a4e-5448-4b19-8dd3-786ab81e7614</code></div>
+          </div>
+        </div>
+        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+          <b>📌 핵심 검증 역량:</b>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">
+            <li>Linux 오픈소스 생태계와 기본 아키텍처 이해</li>
+            <li>터미널(CLI) 환경 파일 및 디렉토리 조작, 권한 관리(chmod, chown)</li>
+            <li>프로세스 모니터링, 기본 쉘 스크립트 작성 및 네트워크 설정 기초</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Cert Modal 2 (Linux Unhatched) -->
+  <div id="certModal2" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📜 Cisco & NDG: Linux Unhatched</h3>
+        <button class="modal-close" onclick="closeModal('certModal2')">&times;</button>
+      </div>
+      <div class="modal-content">
+        <div class="interactive-box">
+          <p style="font-size: 0.95rem; font-weight: 700; color: #0284c7; margin-bottom: 0.5rem;">Cisco Networking Academy & NDG 공식 수료증</p>
+          <div style="font-size: 0.9rem; color: #334155; line-height: 1.8;">
+            <div>• <b>수료자(Awarded to):</b> TOKHIRBEK YULDASHEV</div>
+            <div>• <b>과정명:</b> Linux Unhatched</div>
+            <div>• <b>수료일자(Completion Date):</b> 05 Nov 2026</div>
+            <div>• <b>Cert ID:</b> <code>ea099851-c7b7-4449-9377-46f9c7ce96aa</code></div>
+          </div>
+        </div>
+        <div style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+          <b>📌 핵심 검증 역량:</b>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">
+            <li>Linux 기초 명령어(ls, cd, cp, mv, rm 등) 완벽 숙달</li>
+            <li>리눅스 환경 초기 진입 및 CLI 기본 워크플로우 습득</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer" id="contact">
     <div class="footer-container">
       <div>
         <div class="footer-brand">Tokhirbek Yuldashev</div>
-        <p class="footer-desc">예비 IT 개발자 | 꾸준히 학습하며 문제를 해결하는 엔지니어가 되겠습니다.</p>
+        <p style="font-size: 0.85rem; color: #64748b;">예비 IT 개발자 | 꾸준히 학습하며 문제를 해결하는 엔지니어가 되겠습니다.</p>
       </div>
       <div class="footer-socials">
         <a href="https://github.com/uzcone" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -734,5 +1105,71 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script>
+    // Modal controls
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        event.target.classList.remove('active');
+      }
+    };
+
+    // AI Classification
+    function classifyItem(name, conf) {
+      document.getElementById('predClass').innerText = name;
+      document.getElementById('predConf').innerText = conf + '%';
+    }
+
+    // IoT Sensor update
+    function updateSensor(val) {
+      document.getElementById('distValue').innerText = val + ' cm';
+      const led = document.getElementById('ledIndicator');
+      const text = document.getElementById('statusText');
+      if (val < 20) {
+        led.style.background = '#ef4444';
+        text.innerText = '위험 (Buzzer ON - 침입 감지)';
+        text.style.color = '#ef4444';
+      } else if (val < 50) {
+        led.style.background = '#eab308';
+        text.innerText = '주의 (Warning Zone)';
+        text.style.color = '#eab308';
+      } else {
+        led.style.background = '#10b981';
+        text.innerText = '안전 (Normal Distance)';
+        text.style.color = '#10b981';
+      }
+    }
+
+    // Calculator Demo
+    let expr = '';
+    function pressCalc(btn) {
+      const display = document.getElementById('calcDisplay');
+      if (btn === 'C') {
+        expr = '';
+        display.innerText = '0';
+      } else if (btn === '=') {
+        try {
+          expr = eval(expr).toString();
+          display.innerText = expr;
+        } catch {
+          display.innerText = 'Error';
+          expr = '';
+        }
+      } else {
+        if (display.innerText === '0' && !isNaN(btn)) {
+          expr = btn;
+        } else {
+          expr += btn;
+        }
+        display.innerText = expr;
+      }
+    }
+  </script>
 </body>
 </html>
